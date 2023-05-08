@@ -44,24 +44,7 @@ console.log(`"foo" in a = ${"foo" in a}`);
 swc.mjs
 
 ```javascript
-function _define_property(obj, key, value) {
-    if (key in obj) {
-        Object.defineProperty(obj, key, {
-            value: value,
-            enumerable: true,
-            configurable: true,
-            writable: true
-        });
-    } else {
-        obj[key] = value;
-    }
-    return obj;
-}
 export class A {
-    constructor(){
-        // foo type
-        _define_property(this, "foo", void 0);
-    }
 }
 const a = new A();
 console.log(`"foo" in a = ${"foo" in a}`);
@@ -80,5 +63,5 @@ $ node dist/esbuild.mjs
 "foo" in a = false
 
 $ node dist/swc.mjs
-"foo" in a = true
+"foo" in a = false
 ```
