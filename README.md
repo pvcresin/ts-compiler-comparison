@@ -18,7 +18,8 @@ console.log(`"foo" in a = ${"foo" in a}`);
 tsc.mjs
 
 ```javascript
-export class A {}
+export class A {
+}
 const a = new A();
 console.log(`"foo" in a = ${"foo" in a}`);
 ```
@@ -34,7 +35,8 @@ console.log(`"foo" in a = ${"foo" in a}`);
 esbuild.mjs
 
 ```javascript
-export class A {}
+export class A {
+}
 const a = new A();
 console.log(`"foo" in a = ${"foo" in a}`);
 ```
@@ -43,23 +45,23 @@ swc.mjs
 
 ```javascript
 function _define_property(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true,
-    });
-  } else {
-    obj[key] = value;
-  }
-  return obj;
+    if (key in obj) {
+        Object.defineProperty(obj, key, {
+            value: value,
+            enumerable: true,
+            configurable: true,
+            writable: true
+        });
+    } else {
+        obj[key] = value;
+    }
+    return obj;
 }
 export class A {
-  constructor() {
-    // foo type
-    _define_property(this, "foo", void 0);
-  }
+    constructor(){
+        // foo type
+        _define_property(this, "foo", void 0);
+    }
 }
 const a = new A();
 console.log(`"foo" in a = ${"foo" in a}`);
