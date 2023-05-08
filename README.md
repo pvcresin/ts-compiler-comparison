@@ -1,6 +1,8 @@
 # tsc-babel-esbuild-swc-diff
 
-input.mts
+- https://github.com/swc-project/swc/issues/7366
+
+## input.mts
 
 ```typescript
 export class A {
@@ -12,6 +14,8 @@ const a = new A();
 
 console.log(`"foo" in a = ${"foo" in a}`);
 ```
+
+## build
 
 `yarn` and `yarn build`
 
@@ -49,6 +53,8 @@ export class A {
 const a = new A();
 console.log(`"foo" in a = ${"foo" in a}`);
 ```
+
+## execute
 
 `yarn execute`
 
