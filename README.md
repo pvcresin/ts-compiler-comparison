@@ -1,6 +1,6 @@
 # tsc-babel-esbuild-swc-diff
 
-- https://github.com/swc-project/swc/issues/7366
+- Issue: https://github.com/swc-project/swc/issues/7366
 
 ## input.mts
 
