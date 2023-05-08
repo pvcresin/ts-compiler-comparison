@@ -8,6 +8,9 @@
       "tsx": true,
       "decorators": true,
       "dynamicImport": true
+    },
+    "transform": {
+      "useDefineForClassFields": false
     }
   }
 }
