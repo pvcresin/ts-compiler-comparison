@@ -1,0 +1,27 @@
+{
+  "name": "tsc-babel-esbuild-swc-diff",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "7.21.5",
+    "@babel/core": "7.21.8",
+    "@babel/preset-typescript": "7.21.5",
+    "@swc/cli": "0.1.62",
+    "@swc/core": "1.3.56",
+    "esbuild": "0.17.18",
+    "typescript": "5.0.4"
+  },
+  "scripts": {
+    "build": "yarn build:tsc && yarn build:babel && yarn build:esbuild && yarn build:swc",
+    "build:tsc": "tsc input.mts --outDir ./dist --target es2015 && mv ./dist/input.mjs ./dist/tsc.mjs",
+    "build:babel": "babel --presets @babel/preset-typescript input.mts --out-file dist/babel.mjs",
+    "build:esbuild": "esbuild input.mts --outfile=dist/esbuild.mjs --target=es2015 --log-level=silent",
+    "build:swc": "swc input.mts -o dist/swc.mjs",
+    "execute": "yarn execute:tsc && yarn execute:babel && yarn execute:esbuild && yarn execute:swc",
+    "execute:tsc": "node dist/tsc.mjs",
+    "execute:babel": "node dist/babel.mjs",
+    "execute:esbuild": "node dist/esbuild.mjs",
+    "execute:swc": "node dist/swc.mjs"
+  }
+}
