@@ -1,5 +1,5 @@
 {
-  "name": "tsc-babel-esbuild-swc-diff",
+  "name": "ts-compiler-comparison",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
