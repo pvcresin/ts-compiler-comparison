@@ -1,73 +1,13 @@
 # tsc-babel-esbuild-swc-diff
 
-- Issue: https://github.com/swc-project/swc/issues/7366
+This is a repository to compare how TypeScript and JSX are compiled by tsc (TypeScript Compiler), Babel, esbuild, and SWC.
 
-## input.mts
+By comparing the differences in output depending on the settings and versions of each tool, you can use this information to support smooth tool migration and related tool development.
 
-```typescript
-export class A {
-  // foo type
-  foo?: string;
-}
+## Usage
 
-const a = new A();
+`npm install`
 
-console.log(`"foo" in a = ${"foo" in a}`);
-```
+`npm run build`: input.tsx -> dist/
 
-## build
-
-`yarn` and `yarn build`
-
-tsc.mjs
-
-```javascript
-export class A {
-}
-const a = new A();
-console.log(`"foo" in a = ${"foo" in a}`);
-```
-
-babel.mjs
-
-```javascript
-export class A {}
-const a = new A();
-console.log(`"foo" in a = ${"foo" in a}`);
-```
-
-esbuild.mjs
-
-```javascript
-export class A {
-}
-const a = new A();
-console.log(`"foo" in a = ${"foo" in a}`);
-```
-
-swc.mjs
-
-```javascript
-export class A {
-}
-const a = new A();
-console.log(`"foo" in a = ${"foo" in a}`);
-```
-
-## execute
-
-`yarn execute`
-
-```sh
-$ node dist/tsc.mjs
-"foo" in a = false
-
-$ node dist/babel.mjs
-"foo" in a = false
-
-$ node dist/esbuild.mjs
-"foo" in a = false
-
-$ node dist/swc.mjs
-"foo" in a = false
-```
+- Compile input.tsx using the CLI version of each tool and output to the dist directory
