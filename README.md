@@ -11,3 +11,6 @@ By comparing the differences in output depending on the settings and versions of
 `npm run build`: input.tsx -> dist/
 
 - Compile input.tsx using the CLI version of each tool and output to the dist directory
+- For ease of reading, it is formatted in Prettier afterwards.
+
+![](./editor.png)
