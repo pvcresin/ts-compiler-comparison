@@ -1,9 +1,10 @@
 import React from "react";
 
-export const c = <h1>component</h1>;
+export function Sample() {
+  return <h1>Hello</h1>;
+}
 
 export class A {
-  // foo type
   foo?: string;
 }
 
