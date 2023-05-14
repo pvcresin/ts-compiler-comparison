@@ -1,4 +1,4 @@
-# tsc-babel-esbuild-swc-diff
+# ts-compiler-comparison
 
 This is a repository to compare how TypeScript and JSX are compiled by tsc (TypeScript Compiler), Babel, esbuild, and SWC.
 
